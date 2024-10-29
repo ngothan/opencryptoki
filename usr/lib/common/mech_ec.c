@@ -1178,6 +1178,8 @@ CK_RV ecdh_pkcs_derive(STDLL_TokData_t *tokdata, SESSION *sess,
 
 end:
     free(derived_key);
+    if (temp_obj)
+        object_free(temp_obj);
 
     return rc;
 }
